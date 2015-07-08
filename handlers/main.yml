@@ -1,0 +1,13 @@
+- name: remove hotlink directories
+  file:
+    path: "{{ hotlink_web_base }}/{{ item }}"
+    state: absent
+  with_items: hotlink_directories
+  notify: hotlink directories
+
+- name: hotlink directories
+  file:
+    src: "{{ hotlink_source_base }}/{{ item }}"
+    dest: "{{ hotlink_web_base }}/{{ item }}"
+    state: link
+  with_items: hotlink_directories

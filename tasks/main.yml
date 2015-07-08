@@ -1,0 +1,6 @@
+- name: trigger hot directory linking
+  command: /bin/true
+  notify: remove hotlink directories
+  tags:
+  - always
+  when: hotlink_enabled

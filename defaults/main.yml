@@ -1,0 +1,4 @@
+hotlink_enabled: yes
+hotlink_directories: []
+hotlink_source_base: /var/source
+hotlink_web_base: /var/web
