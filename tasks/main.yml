@@ -1,6 +1,13 @@
-- name: trigger hot directory linking
+- name: trigger multi hot directory linking
   command: /bin/true
   notify: remove hotlink directories
   tags:
   - always
-  when: hotlink_enabled
+  when: hotlink_enabled and hotlink_directories
+
+- name: trigger single hot directory linking
+  command: /bin/true
+  notify: remove hotlink directory
+  tags:
+  - always
+  when: hotlink_enabled and not hotlink_directories
